@@ -15,7 +15,7 @@ def position_taken?(board,index)
 end
 
 def valid_move?(board,index)
-if index == ( 0 || 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 ) && !position_taken?(board,index)
+if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4 || index == 5 || index == 6 || index == 7 || index == 8 ) && !position_taken?(board,index)
   return true
 end
 end
@@ -38,6 +38,7 @@ def turn(board)
   if valid_move?(board,index)
     move(board,index,token="X")
     display_board(board)
+
 elsif !valid_move?(board,index)
     turn(board)
   end
